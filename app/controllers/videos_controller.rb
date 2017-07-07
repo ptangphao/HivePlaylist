@@ -12,7 +12,7 @@ class VideosController < ApplicationController
 
   def create
    @video = Video.new(video_params)
- 	 if @video.save
+   if @video.save
  	 	flash[:success] = "Successfully added #{@video.title} to the playlist."
  	 else
  	 	flash[:danger] = "Failed to add video to the playlist"
