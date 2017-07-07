@@ -9,6 +9,7 @@ class VideosController < ApplicationController
   	@playlist = Video.all
   	@video = Video.new
   end 
+
  	def create
  		@video = Video.new(video_params)
  		if @video.save
@@ -18,6 +19,7 @@ class VideosController < ApplicationController
  		end
  		redirect_to root_path
  	end 
+ 	
  	def destroy
  		@video = Video.find(params[:id])
  		@video.destroy
