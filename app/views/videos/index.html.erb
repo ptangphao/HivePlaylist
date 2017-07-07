@@ -1,15 +1,17 @@
 <h1> Hive Playlist </h1>
 <% if @url %>
-  <iframe width="840" height="630" src=<%= @url  %>>
+  <div class="video-container">
+  <iframe width="840" height="630" frameborder="0" src=<%= @url  %>>
   </iframe>
+  </div>
   <h2> Current Playlist </h2>
-  <ul>
+  
   <% @playlist.each do|video| %>
   <li><%= link_to(video.title,video.url) %> <%= button_to "Remove from playlist", {:controller=> :videos, :action => 'destroy', :id => video.id}, :method => :delete %></li>
   <% end %>
-  </ul>
+
 <% else %>
-  <h2>Submit a Youtube video to get started!</h2>
+  <h1 id="no-video-header">Submit a Youtube video to get started!</h2>
 <% end %>
 <h2>Add a video</h2>
 <%= form_for @video, url: {action: "create"} do |f|%>
@@ -19,7 +21,7 @@
 
 <% flash.each do |key,value| %>
   <% if value %>
-  <div class="alert alert-<%= key %> message">
+  <div class="alert alert-<%= key %> message status">
     <%= value %>
   </div>
   <% end %>

@@ -13,3 +13,52 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+	text-align: center;
+	padding-bottom: 5%;
+	background-color: black;
+}
+
+h1,
+h2 {
+	color:white;
+}
+
+
+li {
+	list-style: none;
+	padding-top: 2%;
+}
+
+#no-video-header {
+	padding-top: 5%;
+	padding-bottom: 5%;
+
+}
+
+.status {
+	margin-top: 5%;
+
+}
+
+.video-container{
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+  padding-bottom: 26.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden;
+  width: 40%;
+
+}
+
+.video-container iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
