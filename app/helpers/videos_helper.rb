@@ -19,4 +19,9 @@ module VideosHelper
 			return BASE_URL+youtube_ids[0]+PLAYLIST_OPTION+youtube_ids[0]+PLAYER_OPTIONS
 		end
 	end
+
+	def scrape_title(url)
+		page = Nokogiri::HTML(open(url),nil,Encoding::UTF_8.to_s)
+		return page.css('title').first.text
+	end
 end
