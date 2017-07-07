@@ -7,10 +7,10 @@ Hive Playlist is a simple Ruby on Rails application that allows users to create 
 Hive Playlist is a Ruby on Rails application built using the following:
 ```
 Ruby
-rails
-postgresql
-puma
-nokogiri
+Rails
+Postgresql
+Puma
+Nokogiri
 ```
 
 ## Relevant Links
