@@ -28,4 +28,19 @@ module VideosHelper
 	def playlist_started?
 		!Video.all.empty?
 	end
+
+	def protect_playlist
+		@videos = Video.all
+		remove_invalid(@videos)
+	end
+
+	def remove_invalid(videos)
+		videos.each do |video|
+			if extract_id(video.url) == nil
+				video.destroy
+				flash[:success] = nil
+				flash[:danger] = "A failure occurred, the problematic entry was removed."
+			end
+		end
+	end
 end

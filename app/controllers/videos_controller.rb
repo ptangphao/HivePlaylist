@@ -2,7 +2,10 @@ class VideosController < ApplicationController
 	include VideosHelper
 
   def index
-  	
+  	if playlist_started?
+  		protect_playlist
+  		@url = embed_url
+  	end
   	@playlist = Video.all
   	@video = Video.new
   end 
