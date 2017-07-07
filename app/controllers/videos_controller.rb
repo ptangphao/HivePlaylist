@@ -2,6 +2,9 @@ class VideosController < ApplicationController
 	include VideosHelper
 
   def index
+  	
+  	@playlist = Video.all
+  	@video = Video.new
   end 
  	def create
  		@video = Video.new(video_params)

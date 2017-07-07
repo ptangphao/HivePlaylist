@@ -24,4 +24,8 @@ module VideosHelper
 		page = Nokogiri::HTML(open(url),nil,Encoding::UTF_8.to_s)
 		return page.css('title').first.text
 	end
+
+	def playlist_started?
+		!Video.all.empty?
+	end
 end
