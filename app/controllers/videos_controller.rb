@@ -11,11 +11,11 @@ class VideosController < ApplicationController
   end
 
   def create
- 	 @video = Video.new(video_params)
+   @video = Video.new(video_params)
  	 if @video.save
- 		flash[:success] = "Successfully added #{@video.title} to the playlist."
+ 	 	flash[:success] = "Successfully added #{@video.title} to the playlist."
  	 else
- 		flash[:danger] = "Failed to add video to the playlist"
+ 	 	flash[:danger] = "Failed to add video to the playlist"
  	 end
  		redirect_to root_path
  	end 
