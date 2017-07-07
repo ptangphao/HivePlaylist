@@ -9,4 +9,14 @@ module VideosHelper
 		youtube_id = basic_url[-11..-1]
 		return youtube_id
 	end
+
+	def embed_url
+		youtube_ids = Video.all.map{|video| extract_id(video_url)}
+		if youtube_ids.length > 1
+			playlist_urls = youtube_ids[1..-1].join(",")
+			return BASE_URL+youtube_ids[0]+PLAYLIST_OPTION+playlist_urls_videos+PLAYER_OPTIONS
+		else
+			return BASE_URL+youtube_ids[0]+PLAYLIST_OPTION+youtube_ids[0]+PLAYER_OPTIONS
+		end
+	end
 end
