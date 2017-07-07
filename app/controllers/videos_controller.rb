@@ -8,9 +8,9 @@ class VideosController < ApplicationController
    end
    @playlist = Video.all
    @video = Video.new
-  end 
+  end
 
- 	def create
+  def create
  	 @video = Video.new(video_params)
  	 if @video.save
  		flash[:success] = "Successfully added #{@video.title} to the playlist."
